@@ -1,0 +1,355 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>BPA Social</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="favicon.ico">
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="static/css/vendor/bootstrap.min.css">
+        <!-- Fonts -->
+
+
+<!-- Displaying boxes -->
+        <link rel="stylesheet" href="static/css/schedule.css"> 
+
+<!-- Login Page -->
+        <link rel="stylesheet" href="static/css/login.css"> 
+
+<!-- Displaying social media icons  -->
+<script src="https://kit.fontawesome.com/d215eb8e6e.js" crossorigin="anonymous"></script>
+
+
+<!-- File picker -->
+
+<script src="static/js/file_picker.js"></script>
+<!-- Displaying images as a slideshow -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans%3A400%2C400italic%2C600%2C700%2C700italic%7COswald%3A400%2C300%7CVollkorn%3A400%2C400italic'><link rel="stylesheet" href="static/css/slideshow.css">
+
+
+
+
+        <!-- Bpa Social CSS -->
+        <link rel="stylesheet" href="static/css/main.css">
+        <!-- <link rel="stylesheet" href="static/css/responsive.css"> -->
+
+
+        <!-- Create the post CSS stuff -->
+
+        <link rel="stylesheet" href="static/css/create_post.css"> 
+
+<!-- Displaying social media icons  -->
+<!-- <script src="https://kit.fontawesome.com/d215eb8e6e.js" crossorigin="anonymous"></script> -->
+
+
+
+
+
+
+    <link href="static/css/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="static/css/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="static/css/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="static/css/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="static/css/register.css" rel="stylesheet" media="all">
+
+
+
+
+
+
+        <!-- THE JS -->
+        <script src="static/js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body id="page-top" data-spy="scroll" data-target=".navbar">
+        
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+        <!-- ========== Preloader ========== -->
+
+        <div class="preloader">
+          <img src="static/images/loader.svg" alt="Loading...">
+        </div>
+
+
+
+        <!-- ========== Navigation ========== -->
+
+        <nav class="navbar navbar-default navbar-fixed-top mega navbar-trans navbar-fw" style="background-color: white; opacity:90%;">
+          <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <!-- Logo -->
+            <a class="navbar-brand" href="index.html"><img class="navbar-logo" src="http://res.cloudinary.com/hfg9s7ggn/image/upload/v1674747697/z946u5burtjf3lltfcop.png" alt="BPA Social - Logo" style="margin-top: -25px; height: 70px;"></a>
+          </div>
+
+          <!-- Navbar Links -->
+<style type="text/css">
+  
+.my_class{
+
+
+/*font-weight: 700 !important;*/
+color: black !important;
+
+
+}
+
+.body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif
+}
+
+.simpletext{
+    margin-left: 10%;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+
+.column-image {
+  margin-left: 5%;
+  margin-bottom: 5%;
+  float: left;
+  width: 65%;
+  padding: 10px;
+  height: 450px;
+
+}
+
+.column-text {
+  float:left;
+  width: 20%;
+  padding: 10px;
+
+}
+
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+</style>
+
+
+
+
+          <div id="navbar" class="navbar-collapse collapse page-scroll navbar-right" style="background-color: white;">
+            
+            <ul class="nav navbar-nav">
+
+              <li><a href="index.html"class="my_class">Home<span class="sr-only"></span></a></li>
+    
+              <li><a href="browse.html"class="my_class">Browse<span class="sr-only"></span></a></li>
+
+              <li><a href="create.html"class="my_class">Post<span class="sr-only"></span></a></li>
+
+              {% if user.is_authenticated %}
+              <li><a href="my_profile.html" class="my_class">My Profile<span class="sr-only"></span></a></li>
+          {% endif %}
+
+
+
+                 <!-- More dropdown -->
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle my_class" data-toggle="dropdown" data-hover="dropdown" data-delay="350" role="button" aria-haspopup="true" aria-expanded="false" >More <span class="caret"></span></a>
+                  <ul class="dropdown-menu" style="margin-right: 80px; margin-top: -2px;">
+
+
+               <li><a href="blogs.html"class="my_class">Blogs<span class="sr-only"></span></a></li>
+
+              <li><a href="about_us.html"class="my_class">About Us<span class="sr-only"></span></a></li>
+
+
+                  </ul>
+                </li><!-- / Blog -->
+
+              <!-- <li><a href="about_us.html"class="my_class">About Us<span class="sr-only"></span></a></li> -->
+
+              <!-- <li><a href="inventory.html"class="my_class">Inventory<span class="sr-only"></span></a></li> -->
+
+
+              {% if user.is_authenticated %}
+              <li><a href="logout.html" class="my_class">Logout<span class="sr-only"></span></a></li>
+
+              {% else %}
+              <li><a href="login.html" class="my_class">Login<span class="sr-only"></span></a></li>
+              {% endif %}
+
+            </ul><!-- / .nav .navbar-nav -->            
+          </div><!--/.navbar-collapse -->
+        </nav><!-- / .navbar -->
+
+
+<!-- End of navbar and import stuff -->
+
+
+ <!-- Put code for website here -->
+
+<style>
+
+
+    input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: #fff !important;
+}
+
+</style>
+
+<div class="page-wrapper bg-gra-01 p-t-180 p-b-100 font-poppins">
+        <div class="wrapper wrapper--w780">
+            <div class="card card-3">
+                <div class="card-heading"></div>
+                <div class="card-body">
+                    <h2 class="title">Registration Info</h2>
+       <form action="" method = POST enctype="multipart/form-data">
+               {% csrf_token %}
+
+               
+                        <div class="input-group">
+                            <input class="input--style-3" type="text" placeholder="First Name" name="fname" required = "required">
+                        </div>
+                        <div class="input-group">
+                                            <input class="input--style-3" type="text" placeholder="Last Name" name="lname" required = "required">
+                        </div>
+
+                        <div class="input-group" style="width: 250px;">
+                            <input class="input--style-3" type="email" placeholder="Email" name="email" required = "required" >
+                        </div>
+
+
+
+
+
+                        <div class="input-group">
+                            <input class="input--style-3" type="text" placeholder="Username" name="username" required = "required">
+                        </div>
+                        <div class="input-group">
+                                            <input class="input--style-3" type="password" placeholder="Password" name="password" required = "required">
+                        </div>
+
+                        <div class="input-group" style="width: 250px;">
+                            <input class="input--style-3" type="password"  placeholder="Confirm Password" name="conf_password" required = "required" >
+                        </div>
+
+
+                        <div class="password-status"></div>
+
+
+{% if error %}
+    <div class="error">That username is already taken <i class='fa fa-times' style='color:red;'></i></div>
+{% endif %}
+
+                    
+<script>
+    const passwordInput = document.querySelector('input[name="password"]');
+    const confPasswordInput = document.querySelector('input[name="conf_password"]');
+    const passwordStatus = document.querySelector('.password-status');
+    passwordInput.addEventListener('input', checkPasswords);
+    confPasswordInput.addEventListener('input', checkPasswords);
+    function checkPasswords() {
+        if (passwordInput.value !== confPasswordInput.value) {
+            passwordStatus.innerHTML = "Passwords do not match <i class='fa fa-times' style='color:red;'></i>";
+        } else {
+            passwordStatus.innerHTML = "Passwords match <i class='fa fa-check' style='color:green;'></i>";
+        }
+    }
+</script>
+
+
+<br>
+<div style="text-align: center;">
+
+    <button class="btn btn-round" style="background-color:white; color:black;">Sign up</button>
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="static/css/vendor/jquery/jquery.min.js"></script>
+    <!-- Vendor JS-->
+    <script src="static/css/vendor/select2/select2.min.js"></script>
+    <script src="static/css/vendor/datepicker/moment.min.js"></script>
+    <script src="static/css/vendor/datepicker/daterangepicker.js"></script>
+
+    <!-- Main JS-->
+    <script src="static/js/register.js"></script>
+
+
+
+
+
+
+
+        <!-- ========== Scripts ========== -->
+
+        <script src="static/js/vendor/jquery-2.1.4.min.js"></script>
+        <script src="static/js/vendor/google-fonts.js"></script>
+
+        <script src="static/js/vendor/bootstrap.min.js"></script>
+
+
+        <!-- The main JS stuff -->
+        <script src="static/js/main.js"></script>
+
+<!-- Slideshow Css  -->
+
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js'></script><script  src="static/js/slideshow.js"></script>
+
+
+
+
+    </body>
+</html>

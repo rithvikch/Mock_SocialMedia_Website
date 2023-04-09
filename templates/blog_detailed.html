@@ -1,0 +1,499 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>BPA Social</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="favicon.ico">
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="static/css/vendor/bootstrap.min.css">
+        <!-- Fonts -->
+
+
+<!-- Displaying boxes -->
+        <link rel="stylesheet" href="static/css/schedule.css"> 
+
+
+
+<!-- Displaying images as a slideshow -->
+
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"> -->
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans%3A400%2C400italic%2C600%2C700%2C700italic%7COswald%3A400%2C300%7CVollkorn%3A400%2C400italic'>
+
+<link rel="stylesheet" href="static/css/slideshow.css">
+
+<!-- Displaying social media icons  -->
+<script src="https://kit.fontawesome.com/d215eb8e6e.js" crossorigin="anonymous"></script>
+
+
+
+        <!-- Bpa Social CSS -->
+        <link rel="stylesheet" href="static/css/main.css">
+        <!-- <link rel="stylesheet" href="static/css/responsive.css"> -->
+
+        <!-- JS -->
+        <script src="static/js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body id="page-top" data-spy="scroll" data-target=".navbar">
+        
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+        <!-- ========== Preloader ========== -->
+
+        <div class="preloader">
+          <img src="static/images/loader.svg" alt="Loading...">
+        </div>
+
+
+
+        <!-- ========== Navigation ========== -->
+
+        <nav class="navbar navbar-default navbar-fixed-top mega navbar-trans navbar-fw" style="background-color: white; opacity:90%;">
+          <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <!-- Logo -->
+            <a class="navbar-brand" href="index.html"><img class="navbar-logo" src="http://res.cloudinary.com/hfg9s7ggn/image/upload/v1674747697/z946u5burtjf3lltfcop.png" alt="BpaSocial - Logo" style="margin-top: -25px; height: 70px;"></a>
+          </div>
+
+          <!-- Navbar Links -->
+<style type="text/css">
+  
+.my_class{
+
+
+/*font-weight: 700 !important;*/
+color: black !important;
+
+
+}
+
+.body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif
+}
+
+.simpletext{
+    margin-left: 10%;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+
+.column-image {
+  margin-left: 5%;
+  margin-bottom: 5%;
+  float: left;
+  width: 65%;
+  padding: 10px;
+  height: 450px;
+
+}
+
+.column-text {
+  float:left;
+  width: 20%;
+  padding: 10px;
+
+}
+
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+</style>
+
+
+          <div id="navbar" class="navbar-collapse collapse page-scroll navbar-right" style="background-color: white;">
+            
+            <ul class="nav navbar-nav">
+
+              <li><a href="index.html"class="my_class">Home<span class="sr-only"></span></a></li>
+    
+              <li><a href="browse.html"class="my_class">Browse<span class="sr-only"></span></a></li>
+
+              <li><a href="create.html"class="my_class">Post<span class="sr-only"></span></a></li>
+
+              {% if user.is_authenticated %}
+              <li><a href="my_profile.html" class="my_class">My Profile<span class="sr-only"></span></a></li>
+          {% endif %}
+
+
+
+                 <!-- More dropdown -->
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle my_class" data-toggle="dropdown" data-hover="dropdown" data-delay="350" role="button" aria-haspopup="true" aria-expanded="false" >More <span class="caret"></span></a>
+                  <ul class="dropdown-menu" style="margin-right: 80px; margin-top: -2px;">
+
+
+               <li><a href="blogs.html"class="my_class">Blogs<span class="sr-only"></span></a></li>
+
+              <li><a href="about_us.html"class="my_class">About Us<span class="sr-only"></span></a></li>
+
+
+                  </ul>
+                </li><!-- / Blog -->
+
+              <!-- <li><a href="about_us.html"class="my_class">About Us<span class="sr-only"></span></a></li> -->
+
+              <!-- <li><a href="inventory.html"class="my_class">Inventory<span class="sr-only"></span></a></li> -->
+
+
+              {% if user.is_authenticated %}
+              <li><a href="logout.html" class="my_class">Logout<span class="sr-only"></span></a></li>
+
+              {% else %}
+              <li><a href="login.html" class="my_class">Login<span class="sr-only"></span></a></li>
+              {% endif %}
+
+            </ul><!-- / .nav .navbar-nav -->             
+          </div><!--/.navbar-collapse --></div>
+        </nav><!-- / .navbar -->
+
+
+ <!-- Put code for website here -->
+
+
+
+    
+
+
+
+
+<style type="text/css">
+  @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  font-family: "Roboto", sans-serif;
+}
+
+.scroll-indicator {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background-color: #0061a0;
+  z-index: 2;
+  width: 0%;
+  transition: all 0.3s linear;
+}
+
+.content {
+  dispay: grid;
+  width: 60%;
+  margin: 0 auto;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.8em;
+}
+.content .poster {
+  width: 100%;
+  height: 350px;
+  display: grid;
+  border-radius: 40px;
+  margin-top: 100px;
+  overflow: hidden;
+  background: center no-repeat url("{{e.image1}}");
+  image-rendering: optimizeQuality !important;
+  position: relative;
+/*  box-shadow: 0px 4px 100px -3px #00059733;*/
+}
+.content .poster .poster-title {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  width: 40%;
+}
+.content .poster .poster-title h1 {
+  font-size: 40px;
+  color: white;
+  font-weight: 300;
+  margin: 20px 0;
+}
+.content .poster .poster-title .line {
+  background-color: #b4c4c5;
+  width: 100%;
+  height: 1px;
+}
+.content .poster .poster-title p {
+  color: #b4c4c5;
+  font-size: 12px;
+  line-height: 1.8em;
+}
+.content .poster .poster-buttons {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 100px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  color: white;
+  text-align: center;
+}
+
+
+.footer {
+  width: 100%;
+  min-height: 150px;
+  margin-top: 100px;
+  padding: 100px 0;
+  background: linear-gradient(0deg, #ffffff 0%, #efefef 100%);
+}
+.footer .content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 20px;
+  font-size: 14px;
+  color: #777;
+}
+
+.info {
+  border-radius: 10px;
+  border: 1px solid #e9e9f6;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 40px auto;
+  background-color: #fdfdfd;
+  overflow: hidden;
+  height: 60px;
+}
+.info .block {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 300;
+  color: #242e47;
+}
+.info .block .mini-title {
+  font-size: 12px;
+  color: #999999;
+  font-weight: 700;
+}
+
+.words {
+  padding: 0 0 0 45px;
+  position: relative;
+}
+.words p {
+  margin: 20px auto;
+  position: relative;
+  color: #777;
+}
+.words p .buttons {
+  position: absolute;
+  right: 10px;
+  width: 40px;
+  height: 100px;
+  background-color: #777;
+}
+.words p .letter {
+  font-size: 100px;
+  position: absolute;
+  top: 15px;
+  left: -45px;
+  color: #8787870f;
+  font-weight: 700;
+}
+.words .buttons {
+  position: absolute;
+  opacity: 0;
+  top: 0px;
+  right: -30px;
+  font-size: 20px;
+  transition: all 0.3s linear;
+  cursor: pointer;
+}
+.words:hover .buttons {
+  opacity: 1;
+}
+
+.quote {
+  position: relative;
+  padding: 40px 40px 40px 45px;
+  background-color: #fdfdfd;
+  border-radius: 10px;
+  min-height: 140px;
+  font-size: 22px;
+  line-height: 1.5em;
+  font-family: "Times New Roman", Times, serif;
+  color: #777;
+}
+.quote .letter {
+  font-size: 150px;
+  position: absolute;
+  top: 50px;
+  color: #ebebeb;
+}
+.quote .author {
+  font-size: 12px;
+}
+.quote .author::before {
+  content: "";
+  width: 40px;
+  height: 1px;
+}
+
+@media (max-width: 700px) {
+  .content {
+    width: 90%;
+  }
+
+  .info {
+    grid-template-columns: repeat(2, 1fr);
+    height: 120px;
+  }
+
+  .content .poster {
+    height: 250px;
+  }
+
+  .content .poster .poster-title h1 {
+    font-size: 25px;
+  }
+  .content .poster .poster-title p, .content .poster .poster-title .line {
+    display: none;
+  }
+
+  .quote {
+    font-size: 16px;
+  }
+  .quote .letter {
+    left: 0px;
+  }
+}
+
+</style>
+
+
+
+
+
+
+<div class="wrapper">
+  <div class="scroll-indicator"></div>
+  <div class="content-wrapper">
+    <div class="content">
+      <div class="poster">
+        <div class="poster-title">
+          <h1> {{e.title}} </h1>
+          <div class="line"></div>
+
+        </div>
+
+      </div>
+
+      <div class="words" style="margin-top: 40px;">
+        <p>
+          <font class="letter">L</font>
+{{e.body|linebreaksbr}}</p>
+              
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+<script type="text/javascript">
+
+const indicator = document.querySelector(".scroll-indicator")    
+
+const scroll = () => {
+  const height = document.documentElement.offsetHeight
+  const mx = document.documentElement.scrollHeight - document.documentElement.clientHeight
+  const perc = document.documentElement.scrollTop * 100  / mx
+  indicator.style.width = perc + "%"
+}
+
+document.addEventListener("scroll", scroll)      
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+        <!-- ========== Scripts ========== -->
+
+        <script src="static/js/vendor/jquery-2.1.4.min.js"></script>
+        <script src="static/js/vendor/google-fonts.js"></script>
+
+          <script src="static/js/vendor/bootstrap.min.js"></script>
+
+        <!-- The main JS stuff -->
+        <script src="static/js/main.js"></script>
+
+
+
+<script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"></script>
+<!-- <script>
+
+  const favoriteButton = document.querySelector(".favorite-button");
+favoriteButton.addEventListener("click", (event) => {
+  const button = event.currentTarget;
+  button.classList.toggle("is-favorite");
+});
+</script> -->
+
+
+
+<script type="text/javascript">
+  
+const favoriteButtons = document.querySelectorAll(".favorite-button");
+favoriteButtons.forEach((button) => {
+  button.addEventListener("click", (event) => {
+    event.currentTarget.classList.toggle("is-favorite");
+  });
+});
+
+  
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<!-- Slideshow JS -->
+
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js'></script><script  src="static/js/slideshow.js"></script>
+
+
+
+
+
+
+</body>
+</html>

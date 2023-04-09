@@ -1,0 +1,765 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>BPA Social</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="favicon.ico">
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="static/css/vendor/bootstrap.min.css">
+        <!-- Fonts -->
+
+
+<!-- Displaying boxes -->
+        <link rel="stylesheet" href="static/css/schedule.css"> 
+
+
+
+<!-- Displaying images as a slideshow -->
+
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"> -->
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans%3A400%2C400italic%2C600%2C700%2C700italic%7COswald%3A400%2C300%7CVollkorn%3A400%2C400italic'>
+
+<link rel="stylesheet" href="static/css/slideshow.css">
+
+<!-- Displaying social media icons  -->
+<script src="https://kit.fontawesome.com/d215eb8e6e.js" crossorigin="anonymous"></script>
+
+
+
+        <!-- Bpa Social CSS -->
+        <link rel="stylesheet" href="static/css/main.css">
+        <!-- <link rel="stylesheet" href="static/css/responsive.css"> -->
+
+        <!-- JS -->
+        <script src="static/js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body id="page-top" data-spy="scroll" data-target=".navbar">
+        
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+        <!-- ========== Preloader ========== -->
+
+        <div class="preloader">
+          <img src="static/images/loader.svg" alt="Loading...">
+        </div>
+
+
+
+        <!-- ========== Navigation ========== -->
+
+        <nav class="navbar navbar-default navbar-fixed-top mega navbar-trans navbar-fw" style="background-color: white; opacity:90%;">
+          <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <!-- Logo -->
+            <a class="navbar-brand" href="index.html"><img class="navbar-logo" src="http://res.cloudinary.com/hfg9s7ggn/image/upload/v1674747697/z946u5burtjf3lltfcop.png" alt="BpaSocial - Logo" style="margin-top: -25px; height: 70px;"></a>
+          </div>
+
+          <!-- Navbar Links -->
+<style type="text/css">
+  
+.my_class{
+
+
+/*font-weight: 700 !important;*/
+color: black !important;
+
+
+}
+
+.body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif
+}
+
+.simpletext{
+    margin-left: 10%;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+
+.column-image {
+  margin-left: 5%;
+  margin-bottom: 5%;
+  float: left;
+  width: 65%;
+  padding: 10px;
+  height: 450px;
+
+}
+
+.column-text {
+  float:left;
+  width: 20%;
+  padding: 10px;
+
+}
+
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+</style>
+
+
+          <div id="navbar" class="navbar-collapse collapse page-scroll navbar-right" style="background-color: white;">
+            
+            <ul class="nav navbar-nav">
+
+              <li><a href="index.html"class="my_class">Home<span class="sr-only"></span></a></li>
+    
+              <li><a href="browse.html"class="my_class">Browse<span class="sr-only"></span></a></li>
+
+              <li><a href="create.html"class="my_class">Post<span class="sr-only"></span></a></li>
+
+              {% if user.is_authenticated %}
+              <li><a href="my_profile.html" class="my_class">My Profile<span class="sr-only"></span></a></li>
+          {% endif %}
+
+
+
+                 <!-- More dropdown -->
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle my_class" data-toggle="dropdown" data-hover="dropdown" data-delay="350" role="button" aria-haspopup="true" aria-expanded="false" >More <span class="caret"></span></a>
+                  <ul class="dropdown-menu" style="margin-right: 80px; margin-top: -2px;">
+
+
+               <li><a href="blogs.html"class="my_class">Blogs<span class="sr-only"></span></a></li>
+
+              <li><a href="about_us.html"class="my_class">About Us<span class="sr-only"></span></a></li>
+
+
+                  </ul>
+                </li><!-- / Blog -->
+
+              <!-- <li><a href="about_us.html"class="my_class">About Us<span class="sr-only"></span></a></li> -->
+
+              <!-- <li><a href="inventory.html"class="my_class">Inventory<span class="sr-only"></span></a></li> -->
+
+
+              {% if user.is_authenticated %}
+              <li><a href="logout.html" class="my_class">Logout<span class="sr-only"></span></a></li>
+
+              {% else %}
+              <li><a href="login.html" class="my_class">Login<span class="sr-only"></span></a></li>
+              {% endif %}
+
+            </ul><!-- / .nav .navbar-nav -->              
+          </div><!--/.navbar-collapse --></div>
+        </nav><!-- / .navbar -->
+
+
+ <!-- Put code for website here -->
+
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+
+
+<style type="text/css">
+
+.wrapper {
+  width: 100%;
+  max-width: 540px;
+  margin: 6rem auto;
+}
+
+.label {
+  font-size: .625rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: +1.3px;
+  margin-bottom: 1rem;
+}
+
+.searchBar {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#searchQueryInput {
+/*  width: 100%;*/
+/*  height: 2.8rem;*/
+width: 1000px;
+height: 50px;
+  background: #f5f5f5;
+  outline: none;
+  border: none;
+  border-radius: 1.625rem;
+  padding: 0 3.5rem 0 1.5rem;
+  font-size: 1rem;
+}
+
+#searchQuerySubmit {
+  width: 3.5rem;
+  height: 3.8rem;
+  margin-left: -3.5rem;
+  martin-top: -4px;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+#searchQuerySubmit:hover {
+  cursor: pointer;
+}
+</style>
+
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+
+ <form autocomplete="off">
+  {% csrf_token %}
+
+
+<div class="wrapper">
+  <div class="label">Submit your search</div>
+  <div class="searchBar">
+
+    
+
+    <input id="searchQueryInput" type="text" name="TxtSearch" placeholder="Search by username" value="" style="font-size: 18px; color:black; font-weight: 650; font-size: 18px; " />
+
+
+    
+    <button id="searchQuerySubmit" type="submit" name="searchQuerySubmit">
+
+
+
+
+
+
+      <svg style="width:34px;height:38px; margin-right:5px;" viewBox="0 0 24 24"><path fill="#666666" d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" />
+      </svg>
+    </button>
+  </div>
+</div>
+
+
+
+</form>
+
+
+
+<!-- Begin showing posts -->
+
+
+
+
+{% for e in social_info %}
+
+{%if e.text_content %}
+
+<!-- Put text content stuff here -->
+
+
+
+<div class="testimonial-box" 
+style=" display: block; margin-left: auto; margin-right: auto; width: 530px; height: auto; margin-top: 60px; box-shadow: 1px 1px 5px; border-radius: 10px;  ">
+
+
+<!-- <div style="margin-top: -20px;"> -->
+                        <div class="profile-img">
+
+    <img src="{{e.user.userprofile.profile_pic}}" alt="user's profile picture">
+
+
+
+                        </div>
+<div>
+<h3 style="font-weight: bold; float: left; margin-left: 60px; margin-top:-45px; max-width: 50px; text-transform: none; letter-spacing: 1px;"> @{{e.user.username}} </h3>
+<h5 style="float: left; margin-left: 65px; margin-top: -20px; color: black;"> {{e.created_at|date:"F j, Y" }} </h5> 
+
+</div>
+
+
+<div style="font-size: 24px; color: black; font-family: sans-serif; text-align: left; line-height: 1.4; word-wrap: break-word; ">
+<br>
+{{e.text_content|linebreaksbr }}
+
+</div>
+<a href = "post_detailed.html?id={{e.id}}">
+
+
+<!-- <h5 style="margin-top: 35px;  text-transform: none; text-align: left; word-spacing: auto;">View all {{e.comments_amount}} comments</h5> -->
+<a href="post_detailed.html?id={{ e.id }}">
+    <h5 style="margin-top: 35px; text-transform: none; text-align: left; word-spacing: auto;">
+  
+        {% if e.comments_amount == 1 %}
+             View {{ e.comments_amount }} comment
+
+        {% elif e.comments_amount == 0 %}
+
+           No comments yet
+
+        {% else %}
+             View all {{ e.comments_amount }} comments
+        {% endif %}
+    </h5>
+</a>
+
+
+
+</a>
+<h5 style="margin-top: -25px;  text-transform: none; text-align: right; word-spacing: auto; margin-right: 30px">{{e.likes}} Likes </h5>
+
+<a href="/like_post?id={{e.id}}">
+<button type="button" class="favorite-button" style="margin-top: -30px; float:right; margin-right:20px">
+  
+  <i class="fas fa-heart favorite__icon favorite"></i>
+  <i class="far fa-heart favorite__icon favorite--not"></i>
+</button>
+</a>
+
+</div>
+
+</a>
+
+{% else %}
+
+
+
+    <!-- start of partial -->
+
+
+<a href = "post_detailed.html?id={{e.id}}">
+<div class="testimonial-box" 
+style=" display: block; margin-left: auto; margin-right: auto; width: 530px; height: 655px; margin-top: 60px; box-shadow: 1px 1px 5px; border-radius: 10px; ">
+
+<!-- <div style="margin-top: -20px;"> -->
+                        <div class="profile-img">
+
+    <img src="{{e.user.userprofile.profile_pic}}" alt="user's profile picture">
+
+
+
+                        </div>
+
+<div>
+
+<h3 style="font-weight: bold; float: left; margin-left: 60px; margin-top:-45px; max-width: 50px; text-transform: none; letter-spacing: 1px;"> @{{e.user.username}}  </h3>
+
+
+<h5 style="float: left; margin-left: 65px; margin-top: -20px; color: black;"> {{e.created_at|date:"F j, Y" }} </h5>
+
+
+
+</div>
+
+
+
+<script>
+function Slider(counter) {
+  const carouselSlides = document.getElementsByName("slide" + counter);
+  const btnPrev = document.querySelector('[name="prev' + counter + '"]');
+  const btnNext =  document.querySelector('[name="next' + counter + '"]');
+  const dotsSlide = document.querySelector('[name="dots-container' + counter + '"]');
+  let currentSlide = 0;
+
+
+    const activeDot = function (slide) {
+        document.querySelectorAll('.dot').forEach(dot => dot.classList.remove('active'));
+        document.querySelector(`.dot[data-slide="${slide}"]`).classList.add('active');
+    };
+    activeDot(currentSlide);
+
+    const changeSlide = function (slides) {
+        carouselSlides.forEach((slide, index) => (slide.style.transform = `translateX(${100 * (index - slides)}%)`));
+    };
+    changeSlide(currentSlide);
+
+    btnNext.addEventListener('click', function () {
+        currentSlide++; 
+        if (carouselSlides.length - 1 < currentSlide) {
+            currentSlide = 0;
+        };
+        changeSlide(currentSlide);
+        activeDot(currentSlide);
+});
+    btnPrev.addEventListener('click', function () {
+        currentSlide--;
+        if (0 >= currentSlide) {
+            currentSlide = 0;
+        }; 
+        changeSlide(currentSlide);
+        activeDot(currentSlide);
+    });
+
+    dotsSlide.addEventListener('click', function (e) {
+        if (e.target.classList.contains('dot')) {
+            const slide = e.target.dataset.slide;
+            changeSlide(slide);
+            activeDot(slide);
+        }
+    });
+  };
+
+
+
+
+
+
+</script>
+
+<a href = "post_detailed.html?id={{e.id}}">
+    <div class="slider" style="width: 450px; height: 430px; margin-top: 15px; border-radius:20px;">
+
+
+{%if e.image1 %}
+      <div class="slide" name = "slide{{forloop.counter}}">
+            <img src="{{e.image1}}" alt="Photo1"/>
+        </div>
+{% endif %}
+
+
+
+{%if e.image2 %}
+      <div class="slide" name = "slide{{forloop.counter}}">
+            <img src="{{e.image2}}" alt="Photo2"/>
+        </div> 
+{% endif %}
+
+
+{%if e.image3 %}
+      <div class="slide" name = "slide{{forloop.counter}}">
+            <img src="{{e.image3}}" alt="Photo3"/>
+        </div>
+{% endif %}
+
+
+{%if e.image4 %}
+      <div class="slide" name = "slide{{forloop.counter}}">
+            <img src="{{e.image4}}" alt="Photo4"/>
+        </div> 
+{% endif %}
+
+
+{%if e.image5 %}
+      <div class="slide" name = "slide{{forloop.counter}}">
+            <img src="{{e.image5}}" alt="Photo5"/>
+        </div> 
+{% endif %}
+
+</a>
+
+        
+{%if e.image2 %} <!-- If there is more than 1 image  -->
+
+        <!-- Left and Right buttons -->
+
+        <button class="btn-slide prev" name = "prev{{forloop.counter}}" ><i class="fas fa-3x fa-chevron-circle-left"></i></button>
+        <button class="btn-slide next" name = "next{{forloop.counter}}"><i class="fas fa-3x fa-chevron-circle-right"></i></button>
+{% endif %}
+    </div>
+
+
+
+
+
+
+
+
+
+
+  <!-- Slider dots -->
+    <div class="dots-container" name = "dots-container{{forloop.counter}}">
+
+
+
+
+
+{%if e.image1 %}
+            <span class="dot active" data-slide="0" style="width:450px"></span>
+{% endif %}
+
+
+
+
+
+      
+    </div>
+
+
+
+
+
+
+
+
+<script>
+
+
+for (let i = 0; i < {{length}}; i++){
+
+let counter = {{forloop.counter}};
+
+// alert(counter);
+
+Slider(counter);
+
+}
+
+
+
+</script>
+
+
+
+
+
+<!-- end of partial -->
+
+
+
+<!-- Caption  -->
+<h4 style="margin-top: 5px;  text-transform: none; text-align: center; font-size: 18.12px; letter-spacing: 1px;  word-wrap: break-word; "> {{e.caption|linebreaksbr }} </h4>
+
+<a href = "post_detailed.html?id={{e.id}}">
+
+<!-- <h5 style="margin-top: 35px;  text-transform: none; text-align: left; word-spacing: auto;">View all {{e.comments_amount}} comments</h5> -->
+
+<a href="post_detailed.html?id={{ e.id }}">
+    <h5 style="margin-top: 35px; text-transform: none; text-align: left; word-spacing: auto;">
+  
+        {% if e.comments_amount == 1 %}
+             View {{ e.comments_amount }} comment
+
+        {% elif e.comments_amount == 0 %}
+
+           No comments yet
+
+        {% else %}
+             View all {{ e.comments_amount }} comments
+        {% endif %}
+    </h5>
+</a>
+
+
+
+</a>
+
+<h5 style="margin-top: -25px;  text-transform: none; text-align: right; word-spacing: auto; margin-right: 30px">{{e.likes}} Likes </h5>
+
+
+<button type="button" class="favorite-button" style="margin-top: -30px; float:right; margin-right:20px">
+  <i class="fas fa-heart favorite__icon favorite--enable"></i>
+  <i class="far fa-heart favorite__icon favorite--not"></i></button>
+
+
+</div>
+
+
+
+
+</a>
+
+
+    {% endif %}
+
+  {% endfor %}
+
+
+
+
+
+
+<!-- Suggested Friends -->
+
+
+<div class="testimonial-box" 
+style=" display: block;  position: absolute; left: 0px; top: 295px; width: 330px; margin-top: -100px; height: 420px; border-radius: 40px;  box-shadow: 1px 1px 5px; ">
+
+
+
+<h4 style="text-align: center; font-family:Helvetica; font-weight: bold; font-size: 18px; text-transform: none; letter-spacing: 1px;"> Suggested Profiles </h4>
+
+
+
+<div style="text-align:center;">
+
+<br>
+
+  {% for friend in friends %}
+
+<a href = "view_profile.html?id={{friend.id}}">
+
+
+    <div style="margin-top:5px">
+
+        <!-- Profile Pic -->
+
+        <div class="profile-img">
+
+
+ {% if friend.profile_pic %}
+    <img src="{{friend.profile_pic}}" alt="user's profile picture">
+{% else %}
+    <img src="https://static.vecteezy.com/system/resources/thumbnails/005/544/718/small/profile-icon-design-free-vector.jpg" alt="default profile picture">
+{% endif %}
+
+
+        </div>
+
+<div>
+
+<h4 style="font-weight: bold; float: left; margin-left: 60px; margin-top:-45px; max-width: 50px; text-transform: none; letter-spacing: 1px;"> {{ friend.user.username }} </h4>
+
+
+<p style="float: left; margin-left: 60px; margin-top: -25px; color: black;"> Last online on {{ friend.user.last_login |date:"F j, Y" }} </p>
+
+
+
+</div>
+
+
+
+<!-- End of profile picture -->
+
+<!-- <h4 style="float:right; margin-top: -35px; margin-right:10px"> {{blog.title}} </h4> -->
+
+    </div>
+</a>
+
+    <br>
+
+
+
+  {% endfor %}
+
+</div>
+
+
+</div>
+<br> 
+
+
+<!-- Show new blogs -->
+
+
+<div class="testimonial-box" 
+style=" display: block;  position: absolute;right: -5px;  top: 312px; width: 330px; margin-top: -120px; height: auto; border-radius: 40px;  box-shadow: 1px 1px 5px; ">
+
+
+
+<h4 style="text-align: center; font-family:Helvetica; font-weight: bold;  font-size: 18px; text-transform: none; letter-spacing: 1px;"> Trending News </h4>
+
+
+<br>
+
+<style>
+.article-container:hover {
+  background-color: lightgrey;
+}
+</style>
+
+<div style="text-align:center;">
+
+
+  {% for article in articles %}
+
+<a href = "{{ article.url }}" target="_blank">
+    <div class="article-container">
+      <p class="article-title" style="font-weight: bold; ">{{ article.title }}</p>
+    </div>
+</a>
+    <br>
+
+
+
+  {% endfor %}
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- ========== Scripts ========== -->
+
+        <script src="static/js/vendor/jquery-2.1.4.min.js"></script>
+        <script src="static/js/vendor/google-fonts.js"></script>
+
+        <script src="static/js/vendor/bootstrap.min.js"></script>
+
+
+        <!-- The main JS stuff -->
+        <script src="static/js/main.js"></script>
+
+
+
+<script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"></script>
+<!-- <script>
+
+  const favoriteButton = document.querySelector(".favorite-button");
+favoriteButton.addEventListener("click", (event) => {
+  const button = event.currentTarget;
+  button.classList.toggle("is-favorite");
+});
+</script> -->
+
+
+
+<script type="text/javascript">
+  
+const favoriteButtons = document.querySelectorAll(".favorite-button");
+favoriteButtons.forEach((button) => {
+  button.addEventListener("click", (event) => {
+    event.currentTarget.classList.toggle("is-favorite");
+  });
+});
+
+  
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<!-- Slideshow JS -->
+
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js'></script><script  src="static/js/slideshow.js"></script>
+
+
+    </body>
+</html>

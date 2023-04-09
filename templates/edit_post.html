@@ -1,0 +1,502 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>BPA Social</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="favicon.ico">
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="static/css/vendor/bootstrap.min.css">
+        <!-- Fonts -->
+
+
+<!-- Displaying boxes -->
+        <link rel="stylesheet" href="static/css/schedule.css"> 
+
+<!-- Displaying social media icons  -->
+<script src="https://kit.fontawesome.com/d215eb8e6e.js" crossorigin="anonymous"></script>
+
+
+<!-- File picker -->
+
+<script src="static/js/file_picker.js"></script>
+<!-- Displaying images as a slideshow -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans%3A400%2C400italic%2C600%2C700%2C700italic%7COswald%3A400%2C300%7CVollkorn%3A400%2C400italic'><link rel="stylesheet" href="static/css/slideshow.css">
+
+
+
+
+        <!-- Bpa Social CSS -->
+        <link rel="stylesheet" href="static/css/main.css">
+        <!-- <link rel="stylesheet" href="static/css/responsive.css"> -->
+
+
+        <!-- Create the post CSS stuff -->
+
+        <link rel="stylesheet" href="static/css/create_post.css"> 
+
+<!-- Displaying social media icons  -->
+<!-- <script src="https://kit.fontawesome.com/d215eb8e6e.js" crossorigin="anonymous"></script> -->
+
+
+        <!-- THE JS -->
+        <script src="static/js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body id="page-top" data-spy="scroll" data-target=".navbar">
+        
+       
+
+
+        <!-- ========== Preloader ========== -->
+
+        <div class="preloader">
+          <img src="static/images/loader.svg" alt="Loading...">
+        </div>
+
+
+
+        <!-- ========== Navigation ========== -->
+
+        <nav class="navbar navbar-default navbar-fixed-top mega navbar-trans navbar-fw" style="background-color: white; opacity:90%;">
+          <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <!-- Logo -->
+            <a class="navbar-brand" href="index.html"><img class="navbar-logo" src="http://res.cloudinary.com/hfg9s7ggn/image/upload/v1674747697/z946u5burtjf3lltfcop.png" alt="BPA Social - Logo" style="margin-top: -25px; height: 70px;"></a>
+          </div>
+
+          <!-- Navbar Links -->
+<style type="text/css">
+  
+.my_class{
+
+
+/*font-weight: 700 !important;*/
+color: black !important;
+
+
+}
+
+.body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif
+}
+
+.simpletext{
+    margin-left: 10%;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+
+.column-image {
+  margin-left: 5%;
+  margin-bottom: 5%;
+  float: left;
+  width: 65%;
+  padding: 10px;
+  height: 450px;
+
+}
+
+.column-text {
+  float:left;
+  width: 20%;
+  padding: 10px;
+
+}
+
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+</style>
+
+
+
+
+          <div id="navbar" class="navbar-collapse collapse page-scroll navbar-right" style="background-color: white;">
+            
+            <ul class="nav navbar-nav">
+
+              <li><a href="index.html"class="my_class">Home<span class="sr-only"></span></a></li>
+    
+              <li><a href="browse.html"class="my_class">Browse<span class="sr-only"></span></a></li>
+
+              <li><a href="create.html"class="my_class">Post<span class="sr-only"></span></a></li>
+
+              {% if user.is_authenticated %}
+              <li><a href="my_profile.html" class="my_class">My Profile<span class="sr-only"></span></a></li>
+          {% endif %}
+
+
+
+                 <!-- More dropdown -->
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle my_class" data-toggle="dropdown" data-hover="dropdown" data-delay="350" role="button" aria-haspopup="true" aria-expanded="false" >More <span class="caret"></span></a>
+                  <ul class="dropdown-menu" style="margin-right: 80px; margin-top: -2px;">
+
+
+               <li><a href="blogs.html"class="my_class">Blogs<span class="sr-only"></span></a></li>
+
+              <li><a href="about_us.html"class="my_class">About Us<span class="sr-only"></span></a></li>
+
+
+                  </ul>
+                </li><!-- / Blog -->
+
+              <!-- <li><a href="about_us.html"class="my_class">About Us<span class="sr-only"></span></a></li> -->
+
+              <!-- <li><a href="inventory.html"class="my_class">Inventory<span class="sr-only"></span></a></li> -->
+
+
+              {% if user.is_authenticated %}
+              <li><a href="logout.html" class="my_class">Logout<span class="sr-only"></span></a></li>
+
+              {% else %}
+              <li><a href="login.html" class="my_class">Login<span class="sr-only"></span></a></li>
+              {% endif %}
+
+            </ul><!-- / .nav .navbar-nav -->  
+          </div><!--/.navbar-collapse -->
+        </nav><!-- / .navbar -->
+
+
+<!-- End of navbar and import stuff -->
+
+
+ <!-- Put code for website here -->
+
+
+
+<input type="hidden" name="post_type" id = "post_type" value="pictures">
+
+
+
+<form action="" method = POST enctype="multipart/form-data">
+               {% csrf_token %}
+
+
+
+
+
+
+
+
+
+
+
+<!-- Top information -->
+
+<div class="testimonial-box" 
+style=" display: block; margin-left: auto; margin-right: auto; width: 700px; height: auto; margin-top: 110px; box-shadow: 1px 1px 5px; border-radius: 20px; ">
+
+
+                        <div class="profile-img">
+                            <img src="static/images/profile.png" /> 
+                        </div>
+
+<div>
+
+<h3 style="font-weight: bold; float: left; margin-left: 60px; margin-top:-45px; max-width: 50px; text-transform: none; letter-spacing: 1px;"> @{{ user.get_username }} </h3>
+
+
+<h5 style="float: left; margin-left: 65px; margin-top: -20px; color: black;"> {% now "F j, Y" %} </h5>
+
+</div>
+
+
+
+<!-- Checkbox forms -->
+
+    <div class="checkboxes" style="float: right; margin-top: -65px; margin-right: 0px">
+
+      <h4>
+
+        <!-- <h5 style="margin-right: 40px;"> a </h5> -->
+        <!-- <input type="checkbox" value="checkbox"  id="checkbox-3" name="show_likes"/>  -->
+<input type="checkbox" value="checkbox" id="checkbox-3" name="hide_likes"
+
+
+ {% if e.hide_likes %}
+
+    checked="checked"
+
+ {% endif %}          >
+
+       <!-- <h2> a</h2> -->
+        <label for="checkbox-3" style="margin-right: 14px;">Hide number of likes</label>
+      </h4>
+
+    </div>
+
+
+
+
+    <div class="checkboxes" style="float: right; margin-top: -35px; ">
+
+      <h4>
+
+        
+<!--         <input type="checkbox" value="checkbox"  id="checkbox-4" name="privacy"/> 
+
+
+     
+        <label for="checkbox-4" style="margin-bottom: -8px;">Make the post private</label>
+ -->       
+ 
+ <input style="margin-bottom: -8px;" type="checkbox" value="checkbox" id="checkbox-4" name="privacy" 
+
+ {% if e.privacy %}
+  
+     checked="checked"
+
+ {% endif %}           >
+
+
+
+
+
+
+<label for="checkbox-4" style="margin-bottom: -8px;">Make the post private</label>
+ 
+      </h4>
+
+    </div>
+
+
+
+<!-- End of checkbox forms -->
+
+
+
+
+
+<!-- Uploading Pictures -->
+
+<!-- The file upload box -->
+
+
+{%if e.caption %}
+
+
+<div id = "pictures" >
+  <div class="Neon Neon-theme-dragdropbox" style="margin-top: 10px; text-align: center;" >
+
+<input class ="display_nice" name="post_images" id="filer_input2" multiple="multiple" type="file" onchange="handle_the_files(event)" max="5">
+
+<div id="previewContainer"></div>
+
+
+<div class="Neon-input-dragDrop"><div class="Neon-input-inner">
+
+  <!-- <div class="Neon-input-icon"> M </div> -->
+
+  <div class="Neon-input-text"><h3>Drag &amp; Drop files here</h3> 
+
+
+   <span style="display:inline-block; margin: 15px 0; font-size: 16px; "> or </span>
+
+
+  </div>
+
+
+
+<label class="btn">Browse Files</label>
+
+<br>
+<br>
+
+<div id="fileCountMessage" style="color: black;">Upload up to 5 pictures!</div>
+
+
+
+
+
+</div>
+  </div>
+      </div>
+
+
+
+<!-- Pictures Caption -->
+
+
+
+
+<div>
+  <textarea placeholder="Enter your caption" id="caption" name = "caption" maxlength = "90" style="width: 644px; height: 77px; font-size: 18px; color: black; text-align: center;">{{e.caption}}</textarea>
+
+
+<div id="char-count" style="float: right; margin-right: 20px;">90 letters left</div>
+</div>
+
+<br> 
+
+<div style="text-align:center;">
+<button class="btn-ghost btn-round"> Save Changes </button>
+</div>
+
+
+<!-- Showing the user how many chars they have left -->
+
+<script>
+  var inputField = document.getElementById('caption');
+  var charCount = document.getElementById('char-count');
+
+  inputField.addEventListener('input', function() {
+    var charactersEntered = this.value.length;
+    var charactersLeft = 90 - charactersEntered;
+    charCount.textContent = charactersLeft + ' letters left';
+  });
+</script>
+
+
+
+</div>
+
+
+<!-- End of uploading Pictures  -->
+
+
+<!-- Uploading only text  -->
+
+{% else %}
+
+<div id = "text>">
+
+
+
+
+
+
+  <textarea placeholder="Type up your post" id="text_only" name = "text_content" style="width: 644px; height: 370px; font-size: 20px; color: black; text-align: left; margin-top: 30px;  line-height: 1.4; overflow: auto;">{{e.text_content}}</textarea>
+
+
+<div id="text-count" style="float: right; margin-right: 20px;">320 letters left</div>
+
+
+
+
+
+<br>
+<!-- <button class="btn-ghost btn-round" type = "submit">Save Changes</button> -->
+<div style="text-align:center;">
+<button class="btn-ghost btn-round"> Save Changes </button>
+</div>
+
+
+
+
+
+    {% endif %}
+
+
+<!-- End of testimonial box -->
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</form>
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- ========== Scripts ========== -->
+
+        <script src="static/js/vendor/jquery-2.1.4.min.js"></script>
+        <script src="static/js/vendor/google-fonts.js"></script>
+
+          <script src="static/js/vendor/bootstrap.min.js"></script>
+
+
+        <!-- The main JS stuff -->
+        <script src="static/js/main.js"></script>
+
+<!-- Slideshow Css  -->
+
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js'></script><script  src="static/js/slideshow.js"></script>
+
+
+
+
+
+<!-- Showing the user how many chars they have left -->
+
+
+
+<script>
+  var inputField = document.getElementById('text_only');
+  var charCount = document.getElementById('text-count');
+
+  inputField.addEventListener('input', function() {
+    var charactersEntered = this.value.length;
+    var charactersLeft = 320 - charactersEntered;
+    charCount.textContent = charactersLeft + ' letters left';
+  });
+</script>
+
+
+    </body>
+</html>

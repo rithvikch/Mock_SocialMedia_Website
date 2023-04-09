@@ -1,0 +1,421 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>BPA Social</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="favicon.ico">
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="static/css/vendor/bootstrap.min.css">
+        <!-- Fonts -->
+
+
+<!-- Displaying boxes -->
+        <link rel="stylesheet" href="static/css/schedule.css"> 
+
+<!-- Displaying social media icons  -->
+<script src="https://kit.fontawesome.com/d215eb8e6e.js" crossorigin="anonymous"></script>
+
+
+<!-- File picker -->
+
+<script src="static/js/file_picker.js"></script>
+<!-- Displaying images as a slideshow -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans%3A400%2C400italic%2C600%2C700%2C700italic%7COswald%3A400%2C300%7CVollkorn%3A400%2C400italic'><link rel="stylesheet" href="static/css/slideshow.css">
+
+
+
+
+        <!-- Bpa Social CSS -->
+        <link rel="stylesheet" href="static/css/main.css">
+        <!-- <link rel="stylesheet" href="static/css/responsive.css"> -->
+
+
+        <!-- Create the post CSS stuff -->
+
+        <link rel="stylesheet" href="static/css/create_post.css"> 
+
+<!-- Edit profile Css -->
+
+<link rel="stylesheet" href="static/css/edit_profile.css">
+
+
+
+<!-- Displaying social media icons  -->
+<!-- <script src="https://kit.fontawesome.com/d215eb8e6e.js" crossorigin="anonymous"></script> -->
+
+
+        <!-- THE JS -->
+        <script src="static/js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body id="page-top" data-spy="scroll" data-target=".navbar">
+        
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+        <!-- ========== Preloader ========== -->
+
+        <div class="preloader">
+          <img src="static/images/loader.svg" alt="Loading...">
+        </div>
+
+
+
+        <!-- ========== Navigation ========== -->
+
+        <nav class="navbar navbar-default navbar-fixed-top mega navbar-trans navbar-fw" style="background-color: white; opacity:90%;">
+          <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <!-- Logo -->
+            <a class="navbar-brand" href="index.html"><img class="navbar-logo" src="http://res.cloudinary.com/hfg9s7ggn/image/upload/v1674747697/z946u5burtjf3lltfcop.png" alt="BPA Social - Logo" style="margin-top: -25px; height: 70px;"></a>
+          </div>
+
+          <!-- Navbar Links -->
+<style type="text/css">
+  
+.my_class{
+
+
+/*font-weight: 700 !important;*/
+color: black !important;
+
+
+}
+
+.body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif
+}
+
+.simpletext{
+    margin-left: 10%;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+
+.column-image {
+  margin-left: 5%;
+  margin-bottom: 5%;
+  float: left;
+  width: 65%;
+  padding: 10px;
+  height: 450px;
+
+}
+
+.column-text {
+  float:left;
+  width: 20%;
+  padding: 10px;
+
+}
+
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+</style>
+
+
+
+
+          <div id="navbar" class="navbar-collapse collapse page-scroll navbar-right" style="background-color: white;">
+            
+            <ul class="nav navbar-nav">
+
+              <li><a href="index.html"class="my_class">Home<span class="sr-only"></span></a></li>
+    
+              <li><a href="browse.html"class="my_class">Browse<span class="sr-only"></span></a></li>
+
+              <li><a href="create.html"class="my_class">Post<span class="sr-only"></span></a></li>
+
+              {% if user.is_authenticated %}
+              <li><a href="my_profile.html" class="my_class">My Profile<span class="sr-only"></span></a></li>
+          {% endif %}
+
+
+
+                 <!-- More dropdown -->
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle my_class" data-toggle="dropdown" data-hover="dropdown" data-delay="350" role="button" aria-haspopup="true" aria-expanded="false" >More <span class="caret"></span></a>
+                  <ul class="dropdown-menu" style="margin-right: 80px; margin-top: -2px;">
+
+
+               <li><a href="blogs.html"class="my_class">Blogs<span class="sr-only"></span></a></li>
+
+              <li><a href="about_us.html"class="my_class">About Us<span class="sr-only"></span></a></li>
+
+
+                  </ul>
+                </li><!-- / Blog -->
+
+              <!-- <li><a href="about_us.html"class="my_class">About Us<span class="sr-only"></span></a></li> -->
+
+              <!-- <li><a href="inventory.html"class="my_class">Inventory<span class="sr-only"></span></a></li> -->
+
+
+              {% if user.is_authenticated %}
+              <li><a href="logout.html" class="my_class">Logout<span class="sr-only"></span></a></li>
+
+              {% else %}
+              <li><a href="login.html" class="my_class">Login<span class="sr-only"></span></a></li>
+              {% endif %}
+
+            </ul><!-- / .nav .navbar-nav -->              
+          </div><!--/.navbar-collapse -->
+        </nav><!-- / .navbar -->
+
+
+<!-- End of navbar and import stuff -->
+
+
+ <!-- Put code for website here -->
+
+
+<form action="" method = POST enctype="multipart/form-data">
+               {% csrf_token %}
+
+<div class="testimonial-box" 
+style=" display: block; margin-left: auto; margin-right: auto; width: 800px; height: 410px; margin-top: 90px; box-shadow: 1px 1px 5px; border-radius: 20px; ">
+
+ 
+<!-- Show user pfp and upload pfp button -->
+
+ <div style="margin-left: 60px; margin-top: 30px;">
+                        <div class="profile-img" style="width:200px; height: 200px;">
+
+
+                            <img id = "new "src="{{ user.userprofile.profile_pic }}"/> 
+                        </div>
+</div>
+                    
+
+
+ <!-- Upload button -->
+ <div>
+
+<input type="file" style="display:none;" id="profile_pic" name="profile_pic" max = "1" onchange="loadFile(event)">
+<label for="profile_pic" class="btn-ghost btn-round" style="margin-top: 30px; margin-left: 10px;">
+  New Profile Picture
+    <i class="fa fa-upload" id="upload-icon"></i>
+</label>
+
+
+<script>
+var loadFile = function(event) {
+  var image = document.getElementById("new");
+  image.src = URL.createObjectURL(event.target.files[0]);
+};
+</script>
+
+
+</div>
+
+
+
+
+<!-- Vertical Line  -->
+<style>
+.vl {
+  border-left: 6px solid grey;
+  height: 412px;
+}
+</style>
+<div class="vl" style="margin-top: -336px; float: left; margin-left: 343px;"></div>
+
+
+
+
+<!-- End of line -->
+
+
+<div style="float: left; margin-top: -320px; margin-left: 30px;">
+
+
+
+
+<style type="text/css">
+  
+
+
+input{
+  font-family: 'Ubuntu', sans-serif;
+  display: block;
+  margin: 10px;
+  padding: 5px;
+  border: none;
+  font-size: 16px;
+/*  max-width: 170px;*/
+}
+
+
+.custom_input{
+
+border-bottom: 1px solid black; text-align: center; font-size: 18px; color: black;
+
+
+}
+
+</style>
+
+
+<div style="text-align: center; margin-left:80px">
+<input class = "custom_input" placeholder = "First Name" type="text" value = "{{fname}}" name = "fname">
+
+<br>
+<input  class = "custom_input" placeholder = "Last Name" type="text" value = "{{lname}}" name = lname>
+
+
+<br>
+<input  class = "custom_input" placeholder = "Username" type="text" value = "{{username}}" name = "username">
+
+
+
+<br>
+
+</div>
+
+
+
+<div class="textfield-outlined" style="margin-left:50px">
+    <textarea id="input-four" style="width:330px; height:130px; font-size:16px" placeholder="" name = "bio" maxlength="90">{{ user.userprofile.bio }}&nbsp</textarea>
+    <label for="input-four">Add a bio</label>
+
+    <div id="char-count" style="float: right; margin-right: 20px; font-size: 14px; margin-top:5px">90 letters left</div>
+</div>
+
+
+
+
+
+<script>
+  var new_inputField = document.getElementById('input-four');
+  var new_charCount = document.getElementById('char-count');
+
+  // Get the initial value of the input field
+  var initialValue = new_inputField.value;
+
+  // Set the initial value of the charCount element
+  var initialCount = 90 - initialValue.length;
+  new_charCount.textContent = initialCount + ' letters left';
+
+  // Add event listener for input field
+  new_inputField.addEventListener('input', function() {
+    var new_charactersEntered = this.value.length;
+    var new_charactersLeft = 90 - new_charactersEntered;
+    new_charCount.textContent = new_charactersLeft + ' letters left';
+  });
+</script>
+
+
+
+
+
+
+<!-- <script>
+  var new_inputField = document.getElementById('input-four');
+  var new_charCount = document.getElementById('char-count');
+  var initialValue = new_inputField.value;
+
+  new_inputField.addEventListener('input', function() {
+    var new_charactersEntered = this.value.length;
+    var new_charactersLeft = 90 - new_charactersEntered;
+    new_charCount.textContent = new_charactersLeft + ' letters left';
+  });
+</script> -->
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+<!-- End of testimonial box -->
+      </div>
+
+
+<div style="text-align:center; margin-top: 5px;">
+      <button class="btn-ghost btn-round" type="post">Save info</button>
+</div>
+
+<br>
+
+
+
+
+</div>
+
+</form>
+
+
+
+        <!-- ========== Scripts ========== -->
+
+        <script src="static/js/vendor/jquery-2.1.4.min.js"></script>
+        <script src="static/js/vendor/google-fonts.js"></script>
+
+        <script src="static/js/vendor/bootstrap.min.js"></script>
+
+
+        <!-- The main JS stuff -->
+        <script src="static/js/main.js"></script>
+
+<!-- Slideshow Css  -->
+
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js'></script><script  src="static/js/slideshow.js"></script>
+
+
+<script>
+
+document.getElementById("profile_pic").onchange = function() {
+  var files = document.getElementById("profile_pic").files;
+  var file = files[0];
+  var fileType = file.type;
+
+  var validFileTypes = ["image/jpeg", "image/png", "image/gif", "video/mp4", "video/webm", "video/ogg"];
+  if (validFileTypes.indexOf(fileType) === -1) {
+    document.getElementById("upload-count").innerHTML = "Invalid file type. Please upload an image or video";
+    return;
+  }
+  document.getElementById("upload-icon").classList.remove("fa-upload");
+  document.getElementById("upload-icon").classList.add("fa-check");
+  var numFiles = files.length;
+  var fileWord = numFiles === 1 ? "file" : "files";
+  document.getElementById("upload-count").innerHTML = numFiles + " " + fileWord + " selected";
+};
+
+</script>
+
+
+
+    </body>
+</html>

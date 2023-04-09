@@ -1,0 +1,564 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>BPA Social</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="favicon.ico">
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="static/css/vendor/bootstrap.min.css">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="static/fonts/et-lineicons/css/style.css">
+        <link rel="stylesheet" href="static/fonts/linea-font/css/linea-font.css">
+        <link rel="stylesheet" href="static/fonts/fontawesome/css/font-awesome.min.css">
+        <!-- Slider -->
+        <link rel="stylesheet" href="static/css/vendor/slick.css">
+        <!-- Lightbox -->
+        <link rel="stylesheet" href="static/css/vendor/magnific-popup.css">
+        <!-- Animate.css -->
+        <link rel="stylesheet" href="static/css/vendor/animate.css">
+        <!-- Animated Headings -->
+        <link rel="stylesheet" href="static/css/vendor/animated-heading.css">
+
+
+        <!-- GarageAddict CSS -->
+        <link rel="stylesheet" href="static/css/main.css">
+        <link rel="stylesheet" href="static/css/responsive.css">
+
+        <!-- JS -->
+        <script src="static/js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body id="page-top" data-spy="scroll" data-target=".navbar">
+        
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+        <!-- ========== Preloader ========== -->
+
+        <div class="preloader">
+          <img src="static/images/loader.svg" alt="Loading...">
+        </div>
+
+
+        <style type="text/css">
+  
+          .my_class{
+          
+          
+        font-weight: 400 !important;
+          color: black !important;
+          
+          
+          }
+          
+          </style>
+
+        <!-- ========== Navigation ========== -->
+
+        <nav class="navbar navbar-default navbar-fixed-top mega navbar-trans navbar-fw" style="background-color: white; opacity:90%;">
+          <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <!-- Logo -->
+            <a class="navbar-brand" href="index.html"><img class="navbar-logo" src="static/images/logo1.png" style="margin-top: -25px; height: 70px;"></a>
+          </div>
+
+
+
+          <!-- Navbar Links -->
+
+
+          <div id="navbar" class="navbar-collapse collapse page-scroll navbar-right" style="background-color: white;">
+            
+            <ul class="nav navbar-nav">
+
+              <li><a href="index.html"class="my_class">Home<span class="sr-only"></span></a></li>
+    
+              <li><a href="browse.html"class="my_class">Browse<span class="sr-only"></span></a></li>
+
+              <li><a href="create.html"class="my_class">Post<span class="sr-only"></span></a></li>
+
+              {% if user.is_authenticated %}
+              <li><a href="my_profile.html" class="my_class">My Profile<span class="sr-only"></span></a></li>
+          {% endif %}
+
+
+
+                 <!-- More dropdown -->
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle my_class" data-toggle="dropdown" data-hover="dropdown" data-delay="350" role="button" aria-haspopup="true" aria-expanded="false" >More <span class="caret"></span></a>
+                  <ul class="dropdown-menu" style="margin-right: 80px; margin-top: -2px;">
+
+
+               <li><a href="blogs.html"class="my_class">Blogs<span class="sr-only"></span></a></li>
+
+              <li><a href="about_us.html"class="my_class">About Us<span class="sr-only"></span></a></li>
+
+
+                  </ul>
+                </li><!-- / Blog -->
+
+              <!-- <li><a href="about_us.html"class="my_class">About Us<span class="sr-only"></span></a></li> -->
+
+              <!-- <li><a href="inventory.html"class="my_class">Inventory<span class="sr-only"></span></a></li> -->
+
+
+              {% if user.is_authenticated %}
+              <li><a href="logout.html" class="my_class">Logout<span class="sr-only"></span></a></li>
+
+              {% else %}
+              <li><a href="login.html" class="my_class">Login<span class="sr-only"></span></a></li>
+              {% endif %}
+
+            </ul><!-- / .nav .navbar-nav -->              
+          </div><!--/.navbar-collapse -->
+        </nav><!-- / .navbar -->
+
+
+
+        <!-- ========== Hero Cover ========== -->
+
+
+   <div id="home" class="animated-hero">
+          <div class="bg-overlay" style="background-image: url(https://source.unsplash.com/1600x900/?sunset); ">
+                            
+            <!-- Hero Content -->
+            <div class="hero-content-wrapper">
+              <div class="hero-content">
+                
+                <h1 class="cd-headline slide hero-lead wow fadeIn" data-wow-duration="2s">
+                  <span class="cd-words-wrapper">
+                   <b class="is-visible" style="width:105%; ">Connectify</b>
+
+                    <!-- <b style="width:105%;">Business</b> -->
+                    <!-- <b style="width:105%; ">Associates</b> -->
+                  </span>
+                </h1>
+                <!-- <h4 class="h-alt hero-subheading wow fadeIn" data-wow-duration="2s" data-wow-delay=".7s">Multipage &amp; Onepage HTML5 Templates</h4> -->
+                <a href="browse.html" class="btn btn-light wow fadeIn" data-wow-duration="2s" data-wow-delay="1s">View Posts</a>
+
+              </div>
+            </div>
+
+            <!-- Scroller -->
+            <a href="#about" class="scroller">
+              <span class="scroller-text">scroll down</span>
+              <span class="linea-basic-magic-mouse"></span>
+            </a>
+
+          </div><!-- / .bg-overlay -->
+        </div><!-- / .animated-hero -->
+
+
+
+
+
+        <!-- ========== About - Section ========== -->
+
+
+        <section id="about" class="container">
+          <div class="row section">
+            
+            <header class="sec-heading">
+              <h2>About Connectify</h2>
+              <span class="subheading" style="color:black;"><b>Welcome to the social media website for Professional Business Associates</b></span>
+            </header>
+
+            <div class="col-md-offset-1 col-md-5">
+              <blockquote>I recently discovered this new social media website and I have to say, I am blown away! The interface is clean and easy to navigate, and I love the personalized recommendations for new connections and content. One of the things I appreciate most about this website is the sense of community.
+
+              <footer><cite>by Henry Hill</cite></footer></blockquote>
+            </div>
+            <div class="col-md-5" style="color:black; ">
+              <p >Introducing Connectify, a new social media platform designed specifically for professional business associates. With Connectify, members can communicate, educate, and entertain with one another all in one place.</p>
+            </div>
+          </div><!-- / .row -->
+          <div class="row ws-m">
+            <div class="col-md-12 text-center">
+              <a href="#offers" class="btn-text">More about us</a>
+            </div>
+          </div>
+        </section><!-- / .container -->
+
+
+
+        <!-- ========== Number Counters - Dark bg ========== -->
+
+        <div class="number-counters-dark-bg">
+          <div class="container">
+            <div id="counters-min" class="row count-wrapper">
+              
+              <!-- Item 1 -->
+              <div class="col-md-3 mb-sm-100 count-item wow fadeIn" data-wow-duration="1s" data-wow-delay=".3s">
+                <span id="count-min-1" class="count-nbr">345</span>
+                <span class="count-text">Social Media Posts</span>
+              </div>
+
+              <!-- Item 2 -->
+              <div class="col-md-3 mb-sm-100 count-item wow fadeIn" data-wow-duration="1s">
+                <span id="count-min-2" class="count-nbr">3,457</span>
+                <span class="count-text">Social Media Users</span>
+              </div>
+
+              <!-- Item 3 -->
+              <div class="col-md-3 mb-sm-100 count-item wow fadeIn" data-wow-duration="1s">
+                <span id="count-min-3" class="count-nbr">2,174</span>
+                <span class="count-text">5 Star Reviews</span>
+              </div>
+
+              <!-- Item 4 -->
+              <div class="col-md-3 count-item wow fadeIn" data-wow-duration="1s" data-wow-delay=".3s">
+                <span id="count-min-4" class="count-nbr">5,753</span>
+                <span class="count-text">Happy clients</span>
+              </div>
+
+            </div><!-- / .row -->
+          </div><!-- / .container -->
+        </div><!-- / .number-counters -->
+
+
+
+        <!-- ========== Services ========== -->
+
+        <div class="gray-bg">
+          <section  class="container ft-cards" style="text-align:center;">
+            <div class="row section">
+
+              <header class="sec-heading" id = "offers">
+                <h2 >What we offer</h2>
+                <!-- <span class="subheading">Lorem ipsum dolor sit amet, consectetur</span> -->
+              </header>
+              
+              <!-- Item 1 -->
+
+              <div id = "services" href = "browse_cars.html" id="services" class="col-lg-4 col-md-6 mb-sm-50" >
+                <div class="ft-item wow fadeInUp" data-wow-duration="1s">
+                  <span class="linea-ecommerce-diamond"></span>
+                  <h4>Create</h4>
+                  <p style="color: black;">
+                    Creating content on Connectify is easy and straightforward. Once a user is logged in, they will have access to a variety of options to add content to their profile. They can upload pictures, videos, audio, and even write posts. They can also edit, delete and manage all their content on the same page. Additionally, users have the ability to mark their content as public or private, allowing them to control who can view their information. With these easy-to-use tools, users can quickly and easily share their thoughts, ideas, and experiences with their professional business associates.
+                  </p>
+                  <a href="create.html">Create a post <span class="linea-arrows-slim-right"></span></a>
+                </div>
+              </div>
+
+              <!-- Item 2 -->
+              <div class="col-lg-4 col-md-6 mb-sm-50">
+                <div class="ft-item wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
+                  <span class="linea-basic-display"></span>
+                  <h4>Browse</h4>
+                  <p>Browsing content on Connectify is easy and user-friendly. Users can browse through other user's content by visiting their profiles, and viewing their public posts, pictures, videos and audio. They can also search for specific users or content by using the search bar. Additionally, users can also use the hashtag feature to find posts that contain certain keywords and join groups or communities related to their interests, where they can view and interact with content specific to that group.
+</p>
+                  <a href="browse.html">Browse Content<span class="linea-arrows-slim-right"></span></a>
+                </div>
+              </div>
+
+              <!-- Item 3 -->
+              <div class="col-lg-4 col-md-6 mb-sm-50">
+                <div class="ft-item wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
+                  <span class="linea-basic-life-buoy"></span>
+                  <h4>Educate</h4>
+                  <p>On Connectify, blogs and articles are a key feature that allows users to share knowledge, insights and opinions on a variety of topics. Users can write and publish their own blogs and articles, and also read blogs and articles written by other users. The blogs and articles can cover a wide range of subjects, from professional development and industry news, to personal reflections and experiences. By creating and reading blogs and articles, users can learn from one another and stay up-to-date on the latest developments in their field. </p>
+                  <a href="blogs.html">View Blogs<span class="linea-arrows-slim-right"></span></a>
+                </div>
+              </div>
+
+            </div><!-- / .row -->
+          </section>
+        </div><!-- / .gray-bg -->
+<style>
+.body {
+  overflow: hidden; /* Hide scrollbars */
+}
+
+</style>
+
+
+
+
+        <!-- ========== Feature - Steps Numbers ========== -->
+
+
+
+        <!-- ========== CTA - Contact Link ========== -->
+
+        <div class="cta-link cta-dark">
+          <div class="bg-overlay">
+            
+            <div class="cta-wrapper">
+              <h3 class="h-alt wow fadeIn" data-wow-delay=".1s" data-wow-duration="1s">See what we can do for you</h3>
+              <a href="#contact" class="btn btn-light btn-large wow fadeIn" data-wow-delay=".3s" data-wow-duration="1s">Get in touch</a>
+            </div>
+
+          </div>
+        </div><!-- / .dark-bg .cta-link -->
+
+
+
+        <!-- ========== Testimonials ========== -->
+        
+        <div id="testimonials" class="gray-bg">
+          <section class="container testimonials-3col">
+
+            <div class="row section">
+
+              <header class="sec-heading">
+                <h2>What people say about us</h2>
+                <span class="subheading">Read some of the testimonials from our amazing clients</span>
+              </header>
+              
+              <!-- Item 1 -->
+              <div class="col-md-4 mb-sm-50">
+                <div class="t-item wow fadeIn" data-wow-duration="1s">
+                  <img src="static/images/avatar-placeholder.png" alt="Testimonial">
+                  <blockquote>
+                    <p>I recently had the pleasure of using the social media website created by Professional Business Associates and I am thoroughly impressed. From the sleek and user-friendly design to the wide array of features offered, it is clear that a great deal of thought and effort has gone into the creation of this platform. In addition to the practical benefits of the site, it is also a joy to use. The visually appealing layout and smooth functionality make it a pleasure to spend time on the site.</p>
+                    <footer>
+                      <cite>by Jordan Aryal<span>Bing</span></cite>
+                    </footer>
+                  </blockquote>
+                  <span class="et-quote t-icon"></span>
+                </div><!-- / .t-item -->
+              </div><!-- / .col-md-4 -->
+
+              <!-- Item 2 -->
+              <div class="col-md-4 mb-sm-50">
+                <div class="t-item wow fadeIn"  data-wow-duration="1s" data-wow-delay=".3s">
+                  <img src="static/images/avatar-placeholder.png" alt="Testimonial">
+                  <blockquote>
+                    <p>I recently had the opportunity to use the social media platform created by Professional Business Associates and I was blown away by the level of innovation and professionalism demonstrated on the site. From the moment I logged on, I was struck by the sleek and modern design of the site. The user interface is intuitive and easy to navigate, making it a breeze to find and connect with other professionals in my field.Overall, I would highly recommend the social media platform created by Professional Business Associates to any professional looking to take their career to the next level.</p>
+                    <footer>
+                      <cite>by Arya Veduraparthi<span>OpenAI</span></cite>
+                    </footer>
+                  </blockquote>
+                  <span class="et-quote t-icon"></span>
+                </div><!-- / .t-item -->
+              </div><!-- / .col-md-4 -->
+
+              <!-- Item 3 -->
+              <div class="col-md-4">
+                <div class="t-item wow fadeIn" data-wow-duration="1s" data-wow-delay=".6s">
+                  <img src="static/images/avatar-placeholder.png" alt="Testimonial">
+                  <blockquote>
+                    <p>As a business professional, security is of the utmost importance to me when it comes to online platforms. That is why I was so impressed by the social media website created by Professional Business Associates. From the moment I logged on, it was clear that the team at PBA takes the security of its users seriously. In addition to feeling secure on the site, I also found it to be incredibly easy to navigate. The layout is clean and intuitive, making it a breeze to find the people and resources I was looking for. The direct messaging feature is also a great addition, allowing me to easily connect with other professionals in a private setting.</p>
+                    <footer>
+                      <cite>by Aman Balam<span>Amazon</span></cite>
+                    </footer>
+                  </blockquote>
+                  <span class="et-quote t-icon"></span>
+                </div><!-- / .t-item -->
+              </div><!-- / .col-md-4 -->
+
+            </div><!-- / .row -->
+          </section><!-- / .container -->
+        </div><!-- / .gray-bg -->
+
+
+
+        <!-- ========== Clients List - Dark ========== -->
+
+
+
+        <!-- ========== CTA - Newsletter Signup ========== -->
+
+        <div class="cta-newsletter cta-dark">
+          <div class="bg-overlay">
+            <div class="cta-wrapper">
+
+              <h3 class="cta-lead h-alt wow fadeIn" data-wow-delay=".1s" data-wow-duration="1s">Join our newsletter</h3>
+
+              <form class="mc-ajax mc-form subscribe-form" _lpchecked="1">
+
+                <!-- Email -->
+                <input type="email" name="EMAIL" placeholder="Your email address" id="mc-email" class="wow fadeInUp" data-wow-delay=".1s" data-wow-duration="1s" >
+                
+                <!-- Send Button -->
+                <input type="submit" name="subscribe" value="Join Us" class="btn btn-light btn-large wow fadeInUp mc-send-btn" data-wow-delay=".1s" data-wow-duration="1s">
+
+                <!-- Info (uncomment this for extra info) -->
+                <!-- <label for="mc-email" class="mc-info"></label> -->
+
+                <!-- Ajax message -->
+                <div class="subscribe-result"></div>
+                
+              </form>
+
+            </div><!-- / .cta-wrapper -->
+          </div><!-- / .bg-overlay -->
+        </div><!-- / .cta-newsletter -->
+
+
+
+        <!-- ========== Footer Contact ========== -->
+   
+        <footer id="contact" class="footer-contact">
+          <div class="container-fluid">
+            <div class="row">
+
+              <!-- Map and address -->
+              <div class="col-lg-6 no-gap contact-info" >
+
+                <!-- Show Info Button -->
+                <a href="#" class="show-info-link"><i class="fa fa-info"></i>Show info</a>
+
+                <div id="map-canvas" class="footer-map" ></div>
+
+                <address class="contact-info-wrapper" style="margin-bottom:150px;">
+                  <ul>
+                    <!-- Address -->
+                    <li class="contact-group" style="margin-left: -50px;"> 
+                      <span class="adr-heading" style="font-weight:bold;">Address</span>
+                      <span class="adr-info">PINE TREE STREET, TX, USA</span>
+                    </li>
+                    <!-- Email -->
+                    <li class="contact-group" style="margin-left: -50px;">
+                      <span class="adr-heading" style="font-weight: bold;">Email</span>
+                      <span class="adr-info">BPASocial@gmail.com</span>
+                    </li>
+                  </ul>
+                  <ul>
+                    <!-- Phone -->
+                    <li class="contact-group">
+                      <span class="adr-heading" style="font-weight:bold;">Phone</span>
+                      <span class="adr-info">+ 972-922-3228</span>
+                    </li>
+                    <!-- Mobile -->
+                    <li class="contact-group">
+                      <span class="adr-heading" style="font-weight:bold;">Mobile</span>
+                      <span class="adr-info">+ 425-647-3998</span>
+                    </li>
+                    <li class="contact-group" style="text-align: left;">
+                      <span class="adr-heading" style="font-weight: bold;">Hours of Operation</span>
+                      <span class="adr-info">Monday-Friday: 9 AM -  6PM</span>
+                      <br>
+                      <span class="adr-info">Saturday-Sunday: 9 AM -  12PM</span>
+                      <br>
+                      <span class="adr-info"><b>Holidays might affect these hours</b></span>
+                      
+                    </li>
+
+                  </ul>                  
+                  
+                 
+                </address>
+
+              </div><!-- / .col-lg-6 -->
+
+
+              <!-- Contact Form -->
+              <div class="col-lg-6 no-gap section contact-form">
+                <header class="sec-heading">
+                  <h2>Contact</h2>
+                  <span class="subheading">Contact us to for any concern or question</span>
+                </header>
+
+                <form action="static/contact-form/contact-form.php" method="POST" class="form-ajax wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s">
+
+                  <!-- Name -->
+                  <div class="form-group">
+                    <input type="text" name="name" id="name-contact-1" class="form-control validate-locally" placeholder="Enter your name">
+                    <label for="name-contact-1">Name</label>
+                    <span class="pull-right alert-error"></span>
+                  </div>
+
+                  <!-- Email -->
+                  <div class="form-group">
+                    <input type="email" name="email" id="email-contact-1" class="form-control validate-locally" placeholder="Enter your email">
+                    <label for="email-contact-1">Email</label>
+                    <span class="pull-right alert-error"></span>
+                  </div>
+
+                  <!-- Message -->
+                  <div class="form-group">
+                    <textarea class="form-control" name="message" id="message-contact-1" rows="5" placeholder="Your Message"></textarea>
+                    <label for="message-contact-1">Message</label>
+                  </div>
+                  <input type="submit" class="btn pull-right" value="Send Message">
+
+                  <!-- Ajax Message -->
+                  <div class="ajax-message col-md-12 no-gap"></div>
+
+                </form>
+              </div><!-- / .col-lg-6 -->
+
+            </div><!-- / .row -->
+          </div><!-- / .container-fluid -->
+
+
+          <!-- Social Links -->
+          <div class="dark-bg">
+            <div class="container footer-social-links">
+              <div class="row">
+                
+
+
+              </div>
+            </div><!-- / .container -->
+          </div><!-- / .dark-bg -->
+
+
+  
+          <div class="copyright">
+            <div class="container">
+              <div class="row">
+                
+              <div class="col-md-6" style="text-align: center; margin-left: 65px;">
+                 <a href="#page-top" class="pull-right to-the-top">To the top<i class="fa fa-angle-up"></i></a>
+                </div>
+
+              </div><!-- / .row -->
+            </div><!-- / .container -->
+          </div>
+        </footer>
+
+        <!-- ========== Scripts ========== -->
+
+<!--         <script src="static/js/vendor/jquery-2.1.4.min.js"></script>
+        <script src="static/js/vendor/google-fonts.js"></script>
+<script src="static/js/vendor/jquery.easing.js"></script>
+   <script src="static/js/vendor/smoothscroll.js"></script>
+   <script src="static/js/vendor/jquery.scrollTo.min.js"></script>
+   <script src="static/js/vendor/jquery.localScroll.min.js"></script> -->
+
+        
+
+
+
+        <script src="static/js/vendor/jquery-2.1.4.min.js"></script>
+        <script src="static/js/vendor/google-fonts.js"></script>
+        <script src="static/js/vendor/jquery.easing.js"></script>
+        <script src="static/js/vendor/smoothscroll.js"></script>
+        <script src="static/js/vendor/jquery.scrollTo.min.js"></script>
+        <script src="static/js/vendor/jquery.localScroll.min.js"></script>
+        <script src="static/js/vendor/bootstrap.min.js"></script>
+
+
+
+        <!-- Chatbot Feature  -->
+
+
+                <script src="//code.tidio.co/63wsxgr59du7t8fm87yiep4tf6gxxn5q.js" async></script>
+
+
+
+
+        <!-- BPA Social JS -->
+        <script src="static/js/main.js"></script>
+    </body>
+</html>
