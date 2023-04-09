@@ -1,0 +1,211 @@
+.Neon {
+  font-family: sans-serif;
+  font-size: 14px;
+  color: #494949;
+  position: relative;
+}
+.Neon * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.Neon-input-dragDrop {
+  display: block;
+  width: 343px;
+  margin: 0 auto 25px auto;
+  padding: 25px;
+/*  margin-left: 300px;*/
+  
+  color: #97a1a8;
+  background: #fff;
+  border: 2px dashed #c8cbce;
+  text-align: center;
+  -webkit-transition: box-shadow 0.3s, border-color 0.3s;
+  -moz-transition: box-shadow 0.3s, border-color 0.3s;
+  transition: box-shadow 0.3s, border-color 0.3s;
+}
+.Neon-input-dragDrop .Neon-input-icon {
+  font-size: 48px;
+  margin-top: -10px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.Neon-input-text h3 {
+  margin: 0;
+  font-size: 18px;
+}
+.Neon-input-text span {
+  font-size: 12px;
+}
+.Neon-input-choose-btn.blue {
+  color: #008bff;
+  border: 1px solid #008bff;
+}
+.Neon-input-choose-btn {
+  display: inline-block;
+  padding: 8px 14px;
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 12px;
+  font-weight: bold;
+  color: #8d9496;
+  border-radius: 3px;
+  border: 1px solid #c6c6c6;
+  vertical-align: middle;
+  background-color: #fff;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.05);
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+/*CSS for creating the post caption*/
+
+
+
+textarea {
+  border: 0; /* remove border */
+  outline: none; /* remove outline */
+  transition: all 0.3s ease; /* add transition for focus and value changes */
+  font-size: 16px; /* set font size */
+  padding: 12px; /* add padding */
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1); /* add shadow effect with stronger shadow on the bottom */
+  position: relative; /* add position: relative for ::before pseudo-element */
+  resize: none; 
+/*  disable resizing */
+
+  display: flex; /* create flexible layout */
+  align-items: center; /* vertically center elements within layout */
+}
+
+textarea::before {
+  content: attr(placeholder); /* set content to the placeholder text */
+  position: absolute; /* position the placeholder element */
+  left: 50%; /* position the placeholder element at the horizontal center of the textarea */
+  top: 50%; /* position the placeholder element at the vertical center of the textarea */
+  transform: translate(-50%, -50%); /* adjust the position of the placeholder element to center it within the textarea */
+  color: #999;
+  pointer-events: none;
+  transform: translateY(-20px) scale(0.75); /* add placeholder animation */
+  transition: transform 0.5s; /* add transition for focus and value changes */
+}
+
+textarea:focus::before {
+  transform: translateY(-20px) scale(0.75); /* move up and scale down */
+  transition-duration: 0.5s;
+}
+
+
+
+/*A cool checkbox*/
+
+
+
+
+[type="checkbox"] {
+  position: absolute;
+  display: none;
+}
+
+/* =================================================================
+           This is where you create the new checkbox square
+=================================================================*/
+
+[type="checkbox"]:not(:checked) + label,
+[type="checkbox"]:checked + label {
+  position: relative;
+  padding-left: 1.95em;
+  cursor: pointer;
+}
+
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1.25em;
+  height: 1.25em;
+  border: 2px solid #000;
+  background: transparent;
+}
+
+/* =================================================================
+ Now have to make our checkmark visable when the checkbox is checked
+=================================================================*/
+
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1.25em;
+  height: 1.25em;
+}
+
+/* =================================================================
+                   Magic that turns the square into a checkmark
+=================================================================*/
+
+[type="checkbox"]:not(:checked) + label:before {
+  border: 1;
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+}
+
+[type="checkbox"]:checked + label:before {
+  width: 0.4em;
+  height: 1.25em;
+  left: 10px;
+  top: -4px;
+  transform: rotate(40deg);
+  border-top: 2px solid transparent;
+  border-left: 2px solid transparent;
+  border-right: 2px solid #11e85d;
+  border-bottom: 2px solid #11e85d;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+
+
+/* =================================================================
+        no logic behind this one, it just spins like crazy
+=================================================================*/
+
+[type="checkbox"]#checkbox-3:checked + label:before{
+  transform: rotate(2200deg);
+    -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+
+
+[type="checkbox"]#checkbox-4:checked + label:before{
+  transform: rotate(2200deg);
+    -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.icon {
+  font-size: 20px;
+}
+
+.display_nice{
+
+z-index: 999;
+ opacity: 0; 
+ width: 320px;
+  height: 200px; 
+  position: absolute; 
+  right: 0px; left: 0px; 
+  margin-right: auto;
+   margin-left: auto;
+

@@ -1,0 +1,100 @@
+
+.slider{
+    position: relative;
+/*     max-width: 40rem; */
+max-width: 500px;
+/*    height: 26.625rem; */
+height: 430px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.slide{ 
+    position: absolute;
+    top:0;
+    width: 100%;
+/*    height: 26.625rem;*/
+height: 430px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 1s;
+}
+.slide > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    image-rendering: optimizeQuality;
+}
+button{
+    background: none;
+    color: white;
+    border: none;
+
+
+}
+button .fas{
+    color: rgba(255, 255, 255, .5);
+}
+.btn-slide{
+    position:absolute;
+    top:50%;
+    z-index: 10;
+
+    height: 5.5rem;
+    width: 5.5rem;
+    cursor: pointer;
+}
+.prev{
+    left:3rem;
+    transform: translate(-50%, -50%);
+}
+.next{
+    right: 3rem;
+    transform: translate(50%, -50%); 
+}
+.dots-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.dot{
+    width: 25px;
+    height: 5px;
+    margin: 15px 5px;
+    border-radius: .5rem;
+    background: black;
+    cursor: pointer;
+}
+.dot.active{
+background: black;
+}
+
+
+
+/*Like emoji button*/
+
+.favorite-button {
+  cursor: pointer;
+  border: 0;
+  color: red;
+}
+
+.favorite-button .favorite__icon {
+  height: 25px;
+  width: 25px;
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.3s;
+  transform: scale(.6);
+  position: absolute;
+}
+
+.favorite-button.is-favorite .favorite--enable {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.favorite-button:not(.is-favorite) .favorite--not {
+  opacity: 1;
+  transform: scale(1);
+}
